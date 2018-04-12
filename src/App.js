@@ -13,17 +13,14 @@ class App extends React.Component {
 
   onClick = id => {
     let newFriend = this.state.friends.filter(friend => friend.id === id);
-    console.log(newFriend[0]);
     if (newFriend[0].clicked) {
       let resetFriend = this.state.friends;
       for (let i = 0; i < friends.length; i++) {
         resetFriend[i].clicked = false;
       }
-      console.log(resetFriend);
       this.setState({friends: this.randomize(resetFriend), points: 0});
     } else {
       const index = this.state.friends.findIndex(friend => friend.id === id);
-      console.log(index);
       let newFriends = this.state.friends;
       newFriends[index].clicked = true;
       newFriends = this.randomize(newFriends);
